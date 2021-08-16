@@ -23,6 +23,7 @@ pyparsing==2.4.7
 pytest==6.2.4
 PyYAML==5.4.1
 requests==2.26.0
+requests-mock==1.9.3
 six==1.16.0
 toml==0.10.2
 urllib3==1.26.6
