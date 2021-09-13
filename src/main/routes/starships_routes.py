@@ -1,4 +1,5 @@
 from fastapi import APIRouter, Request as RequestFastApi
+from src.validators.get_starships_in_pagination_validator import get_pagination_validator
 
 starships_routes = APIRouter()
 
@@ -6,7 +7,6 @@ starships_routes = APIRouter()
 def get_starships_in_pagination(request: RequestFastApi):
     ''' get_starships_in_pagination '''
 
-    print(request.query_params["page"])
-    print(request.query_params["ola"])
+    get_pagination_validator(request)
 
     return { "Ola": "Mundo" }
