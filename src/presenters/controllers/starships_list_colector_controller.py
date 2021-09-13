@@ -1,8 +1,10 @@
 import json
 from typing import Dict
 from src.domain.usecases.starships_list_colector import StarshipsListColectorInterface
+from src.presenters.interface.controllers import ControllersInterface
 
-class StarshipsListColectorController:
+class StarshipsListColectorController(ControllersInterface):
+    ''' Controller to List Starships '''
 
     def __init__(self, starships_list_colector: StarshipsListColectorInterface) -> None:
         self.__use_case = starships_list_colector
