@@ -16,13 +16,13 @@ async def request_adapter(request: RequestFastApi, callback: Callable):
     except:
         pass
 
-    http_request_info = {
+    http_request = {
         "query_params": request.query_params,
         "body": body
     }
 
     try:
-        http_response = callback(http_request_info)
+        http_response = callback(http_request)
         return http_response
     except:
         print('An Error Has Occurred')
