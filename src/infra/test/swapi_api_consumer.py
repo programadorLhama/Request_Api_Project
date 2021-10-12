@@ -38,7 +38,7 @@ class SwapiApiConsumerSpy:
         )
 
     def get_starship_information(self, starship_id: int) -> any:
-        ''' mock to get_starships '''
+        ''' mock to get_starship_information '''
 
         self.get_starship_information_attributes["starship_id"] = starship_id
         return self.get_starship_information_response(

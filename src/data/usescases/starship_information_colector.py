@@ -1,6 +1,8 @@
 from typing import Type, Dict
 from src.domain.usecases.starship_information_colector import StarshipInformationColectorInterface
 from src.data.interfaces.swapi_api_consumer import SwapiApiConsumerInterface
+from src.errors import HttpUnprocessableEntityError
+
 
 class StarshipInformationColector(StarshipInformationColectorInterface):
     ''' StarshipInformationColector usecase '''
@@ -34,7 +36,7 @@ class StarshipInformationColector(StarshipInformationColectorInterface):
         api_response = self.__api_consumer.get_starship_information(starship_id)
 
         if api_response.response['MGLT'] == 'unknown':
-            raise Exception('Unprocessible Information for selected starship')
+            raise HttpUnprocessableEntityError('Unprocessible Information for selected starship')
 
         return api_response.response
 
