@@ -21,8 +21,5 @@ async def request_adapter(request: RequestFastApi, callback: Callable):
         "body": body
     }
 
-    try:
-        http_response = callback(http_request)
-        return http_response
-    except:
-        print('An Error Has Occurred')
+    http_response = callback(http_request)
+    return http_response
